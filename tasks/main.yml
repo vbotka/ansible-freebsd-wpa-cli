@@ -5,6 +5,9 @@
   when: wpacli_debug
   tags: [wpacli_debug, always]
 
+- import_tasks: assert.yml
+  tags: [wpacli_assert, always]
+
 - import_tasks: packages.yml
   tags: wpacli_packages
 

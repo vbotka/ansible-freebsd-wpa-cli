@@ -2,8 +2,11 @@
 # defaults for vbotka.freebsd_wpa_cli
 
 wpa_cli_enable: "YES"
+wpacli_assert_enable: true
 wpacli_debug: false
 wpacli_backup_conf: no
+wpacli_versions_tested:
+  - "12.0"
 
 freebsd_install_method: "packages"
 #freebsd_install_method: "ports"

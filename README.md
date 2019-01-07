@@ -38,7 +38,6 @@ Example playbooks
 - hosts: router
   roles:
     - vbotka.freebsd_postinstall
-    - vbotka.freebsd_network
 
 
 # ansible-playbook freebsd-postinstall.yml -t fp_wpasupplicant
@@ -60,7 +59,10 @@ Example playbooks
 Details
 -------
 
-wpa_cli is an utility developed, built and packaged together with wpa_supplicant. wpa_cli is installed in the base system together with wpa_supplicant. wpa_cli can run in the background, listen to the events from wpa_supplicant and execute programmable actions (wpa_cli -B -i wlan0 -a action_file.sh). wpa_cli provides the RC system with synchronous and reliable method how to configure DHCP and routing of wireless adapters.
+- [wpa_cli](https://www.freebsd.org/cgi/man.cgi?wpa_cli) is an utility developed, built and packaged together with [wpa_supplicant](https://w1.fi/).
+- *wpa_cli* is installed in the base system together with *wpa_supplicant*.
+- *wpa_cli* can run in the background, listen to the events from *wpa_supplicant* and execute programmable actions (wpa_cli -B -i wlan0 -a action_file.sh).
+- *wpa_cli* provides reliable synchronous method to configure DHCP and routing of wireless adapters. See example of *action_file.sh* below.
 
 ```
 #!/bin/sh
@@ -75,16 +77,9 @@ if [ "$cmd" = "DISCONNECTED" ]; then
     /etc/rc.d/routing restart
 ```
 
-When the dhclient is controlled by wpa_cli ifconfig must by configured in rc.conf to control wpa_supplicant only
+To control *wpa_cli* rc script */etc/rc.d/wpa_cli* must be created
 
 ```
-ifconfig_wlan0="WPA"
-```
-
-wpa_cli must be created in /etc/rc.d
-
-```
-# cat /etc/rc.d/wpa_cli 
 #!/bin/sh
 
 # PROVIDE: wpa_cli
@@ -115,7 +110,7 @@ required_files="${wpa_cli_action_file}"
 run_rc_command "$1"
 ```
 
-wpa_cli is started and stopped from the network.subr
+*wpa_cli* is started and stopped from *network.subr*
 
 ```
 # grep -A 1 -B 3 wpa_cli /etc/network.subr
@@ -132,7 +127,7 @@ wpa_cli is started and stopped from the network.subr
 		/etc/rc.d/wpa_supplicant stop $1
 ```
 
-Following default variables are added to /etc/defaults
+Following default variables are added to */etc/defaults*
 
 ```
 # grep -r wpa_cli /etc/defaults/
@@ -141,7 +136,13 @@ Following default variables are added to /etc/defaults
 /etc/defaults/rc.conf:wpa_cli_action_file="/root/bin/wpa_action.sh"
 ```
 
-Service netif than starts/restarts and stops both wpa_supplicant and wpa_cli
+When the *dhclient* is controlled by wpa_cli, ifconfig must by configured in rc.conf to control *wpa_supplicant* only. Options [DHCP and SYNCDHCP](https://www.freebsd.org/doc/handbook/network-wireless.html) would start unwanted additional *dhclient*.
+
+```
+ifconfig_wlan0="WPA"
+```
+
+Service *netif* than starts/restarts and stops both wpa_supplicant and wpa_cli
 
 ```
 
