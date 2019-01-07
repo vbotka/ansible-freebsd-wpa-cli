@@ -1,0 +1,21 @@
+---
+# tasks for vbotka.freebsd_wpa_cli
+
+- import_tasks: debug.yml
+  when: wpacli_debug
+  tags: [wpacli_debug, always]
+
+- import_tasks: packages.yml
+  tags: wpacli_packages
+
+- import_tasks: wpa-cli.yml
+  tags: wpacli_wpa_cli
+
+- import_tasks: rc.yml
+  tags: wpacli_rc
+
+- import_tasks: rcconf.yml
+  tags: wpacli_rc_conf
+
+# EOF
+...

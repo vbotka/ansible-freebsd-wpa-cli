@@ -1,0 +1,42 @@
+---
+# defaults for vbotka.freebsd_wpa_cli
+
+wpa_cli_enable: "YES"
+wpacli_debug: false
+wpacli_backup_conf: no
+
+freebsd_install_method: "packages"
+#freebsd_install_method: "ports"
+#freebsd_use_packages: "yes"
+freebsd_install_retries: 10
+freebsd_install_delay: 5
+
+wpacli_program: "/usr/sbin/wpa_cli"
+wpacli_packages:
+  - security/wpa_supplicant
+
+wpacli_pid_dir: "/var/run/wpa_cli"
+wpacli_pid_dir_owner: "root"
+wpacli_pid_dir_group: "wheel"
+wpacli_pid_dir_mode: "0750"
+
+wpacli_action_script: false
+wpacli_action_script_template: wpa_action.sh.j2
+wpacli_action_script_dir: "/root/bin"
+wpacli_action_script_file: "{{ wpacli_action_script_dir }}/wpa_action.sh"
+wpacli_action_script_owner: "root"
+wpacli_action_script_group: "wheel"
+wpacli_action_script_mode: "0750"
+wpacli_action_script_log_to_file: false
+wpacli_action_script_logfile: "/tmp/wpa_action.$ifname"
+
+wpacli_rcconf:
+  - { key: "wpa_cli_enable", val: "{{ wpa_cli_enable }}" }
+  - { key: "wpa_cli_program", val: "{{ wpacli_program }}" }
+  - { key: "wpa_cli_ctrl_interface", val: "/var/run/wpa_supplicant" }
+  - { key: "wpa_cli_action_file", val: "{{ wpacli_action_script_file }}" }
+
+# fp_wpasupplicant_conf_ctrl_interface: "/var/run/wpa_supplicant"
+
+# EOF
+...
