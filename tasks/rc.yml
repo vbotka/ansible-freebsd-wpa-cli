@@ -15,12 +15,12 @@
     src: "{{ role_path }}/files/rc.conf.patch"
     basedir: /etc/defaults
   tags: wpacli_rc_defaults_patch
- 
+
 - name: "rc: Patch /etc/network.subr, start/stop wpa_cli"
   patch:
     src: "{{ role_path }}/files/network.subr.patch"
     basedir: /etc
   tags: wpacli_rc_networksubr_patch
-  
+
 # EOF
 ...
