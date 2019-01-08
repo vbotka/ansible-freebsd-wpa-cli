@@ -59,10 +59,10 @@ Example playbooks
 Details
 -------
 
-- [wpa_cli](https://www.freebsd.org/cgi/man.cgi?wpa_cli) is an utility developed, built and packaged together with [wpa_supplicant](https://w1.fi/).
+- [*wpa_cli*](https://www.freebsd.org/cgi/man.cgi?wpa_cli) is an utility developed, built and packaged together with [*wpa_supplicant*](https://w1.fi/).
 - *wpa_cli* is installed in the base system together with *wpa_supplicant*.
 - *wpa_cli* can run in the background, listen to the events from *wpa_supplicant* and execute programmable actions (wpa_cli -B -i wlan0 -a action_file.sh).
-- *wpa_cli* provides reliable synchronous method to configure DHCP and routing of wireless adapters. See example of *action_file.sh* below.
+- *wpa_cli* provides reliable synchronous method to configure DHCP and routing of wireless adapters. See example of *action_file.sh* below. See also [template](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_action.sh.j2) to be installed.
 
 ```
 #!/bin/sh
@@ -77,7 +77,7 @@ if [ "$cmd" = "DISCONNECTED" ]; then
     /etc/rc.d/routing restart
 ```
 
-To control *wpa_cli* rc script */etc/rc.d/wpa_cli* must be created
+To control *wpa_cli* rc script */etc/rc.d/wpa_cli* is created from [template](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_cli.j2)
 
 ```
 #!/bin/sh
@@ -110,7 +110,7 @@ required_files="${wpa_cli_action_file}"
 run_rc_command "$1"
 ```
 
-*wpa_cli* is started and stopped from *network.subr*
+*wpa_cli* is started and stopped from *network.subr* . See [patch](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/files/network.subr.patch)
 
 ```
 # grep -A 1 -B 3 wpa_cli /etc/network.subr
@@ -127,7 +127,7 @@ run_rc_command "$1"
 		/etc/rc.d/wpa_supplicant stop $1
 ```
 
-Following default variables are added to */etc/defaults*
+Following default variables are added to */etc/defaults* . See [patch](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/files/rc.conf.patch)
 
 ```
 # grep -r wpa_cli /etc/defaults/
