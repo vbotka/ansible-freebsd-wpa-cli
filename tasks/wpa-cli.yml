@@ -9,10 +9,18 @@
     mode: "{{ wpacli_pid_dir_mode }}"
   tags: wpacli_pid_dir
 
-- name: "wpa-cli: Create action script {{ wpacli_action_script_file }}"
+- name: "wpa-cli: Create {{ wpacli_action_script_dir }}"
+  file:
+    state: directory
+    path: "{{ wpacli_action_script_dir }}"
+  when: wpacli_action_script
+  tags: wpacli_action_script
+
+- name: "wpa-cli: Create action script
+         {{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}"
   template:
     src: wpa_action.sh.j2
-    dest: "{{ wpacli_action_script_file }}"
+    dest: "{{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}"
     owner: "{{ wpacli_action_script_owner }}"
     group: "{{ wpacli_action_script_group }}"
     mode: "{{ wpacli_action_script_mode }}"

@@ -24,9 +24,9 @@ wpacli_pid_dir_group: "wheel"
 wpacli_pid_dir_mode: "0750"
 
 wpacli_action_script: false
-wpacli_action_script_template: wpa_action.sh.j2
+wpacli_action_script_template: "wpa_action.sh.j2"
 wpacli_action_script_dir: "/root/bin"
-wpacli_action_script_file: "{{ wpacli_action_script_dir }}/wpa_action.sh"
+wpacli_action_script_file: "wpa_action.sh"
 wpacli_action_script_owner: "root"
 wpacli_action_script_group: "wheel"
 wpacli_action_script_mode: "0750"
@@ -37,7 +37,8 @@ wpacli_rcconf:
   - { key: "wpa_cli_enable", val: "{{ wpa_cli_enable }}" }
   - { key: "wpa_cli_program", val: "{{ wpacli_program }}" }
   - { key: "wpa_cli_ctrl_interface", val: "/var/run/wpa_supplicant" }
-  - { key: "wpa_cli_action_file", val: "{{ wpacli_action_script_file }}" }
+  - { key: "wpa_cli_action_file",
+      val: "{{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}" }
 
 # fp_wpasupplicant_conf_ctrl_interface: "/var/run/wpa_supplicant"
 
