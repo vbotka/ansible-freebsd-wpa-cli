@@ -3,7 +3,7 @@ freebsd_wpa_cli
 
 [![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli)
 
-[Ansible role.](https://galaxy.ansible.com/vbotka/freebsd_wpa_cli/) FreeBSD. Use wpa_cli action_file to configure wlan devices. Configuration of RC system.
+[Ansible role.](https://galaxy.ansible.com/vbotka/freebsd_wpa_cli/) FreeBSD. Configuration of RC system. Use wpa_cli action_file to configure wlan devices.
 
 
 Requirements
@@ -21,7 +21,7 @@ Recommended
 Role Variables
 --------------
 
-Review defaults and examples in vars.
+Review defaults, templates and examples in vars.
 
 Dependencies
 ------------

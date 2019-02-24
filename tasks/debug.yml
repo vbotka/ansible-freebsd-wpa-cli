@@ -10,7 +10,7 @@
          ansible_distribution_version [ {{ ansible_distribution_version }} ]
          ansible_distribution_release [ {{ ansible_distribution_release }} ]
 
-         wpa_cli_enable [ {{ wpa_cli_enable }} ]
+         wpacli_enable [ {{ wpacli_enable }} ]
          wpacli_assert_enable [ {{ wpacli_assert_enable }} ]
          wpacli_versions_tested
          {{ wpacli_versions_tested | to_nice_yaml }}

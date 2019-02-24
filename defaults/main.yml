@@ -1,40 +1,78 @@
 ---
 # defaults for vbotka.freebsd_wpa_cli
 
-wpa_cli_enable: "YES"
+# Enable wpa_cli in rc.conf
+# (It's a string used in rc.conf. It's not a boolean type.
+# Options are "YES" or "NO" uppercase mandatory.
+wpacli_enable: "YES"
+
+# Enable test of supported OS versions listed in wpacli_versions_tested
 wpacli_assert_enable: true
+
+# Enable debug output
 wpacli_debug: false
-wpacli_backup_conf: no
+
+# Create backups of modified files
+wpacli_backup_conf: false
+
+# List of supported OS versions
 wpacli_versions_tested:
   - "12.0"
 
+# Installation method.
+# Options are "packages" for binary packages or "ports"
 freebsd_install_method: "packages"
-#freebsd_install_method: "ports"
-#freebsd_use_packages: "yes"
+
+# If installation method is "ports" use binary packages if
+# available. Default: false
+# freebsd_use_packages: true
+
+# Number of times an unsuccessful installation is retried
 freebsd_install_retries: 10
+
+# Delay in seconds an unsuccessful installation is retried
 freebsd_install_delay: 5
 
+# Path to wpa_cli.
+# "/usr/sbin/wpa_cli" is included in the base system. Change to
+# "/usr/local/sbin/wpa_cli" to use the binaries installed by
+# security/wpa_supplicant.
+# Change together with the path to wpa_supplicant. Optionaly use
+# vbotka.freebsd_postinstall to accomplish this.
+#   - include_role:
+#       name: vbotka.freebsd_postinstall
+#       tasks_from: wpasupplicant.yml
 wpacli_program: "/usr/sbin/wpa_cli"
+
+# Install packages.
 wpacli_packages:
   - security/wpa_supplicant
 
+# wpa_cli PID
 wpacli_pid_dir: "/var/run/wpa_cli"
 wpacli_pid_dir_owner: "root"
 wpacli_pid_dir_group: "wheel"
 wpacli_pid_dir_mode: "0750"
 
+# Create wpa_cli action script.
 wpacli_action_script: false
-wpacli_action_script_template: "wpa_action.sh.j2"
+# Path to the action script.
 wpacli_action_script_dir: "/root/bin"
+# Filename of the action script.
 wpacli_action_script_file: "wpa_action.sh"
+# Ownership and permissions of the action script.
 wpacli_action_script_owner: "root"
 wpacli_action_script_group: "wheel"
 wpacli_action_script_mode: "0750"
+# Action script template.
+wpacli_action_script_template: "wpa_action.sh.j2"
+# Paramters used in the template.
 wpacli_action_script_log_to_file: false
 wpacli_action_script_logfile: "/tmp/wpa_action.$ifname"
 
+# Parameters in /etc/rc.conf
 wpacli_rcconf:
-  - { key: "wpa_cli_enable", val: "{{ wpa_cli_enable }}" }
+  - { key: "wpa_cli_enable", val: "{{ wpacli_enable }}" }
   - { key: "wpa_cli_program", val: "{{ wpacli_program }}" }
   - { key: "wpa_cli_ctrl_interface", val: "/var/run/wpa_supplicant" }
   - { key: "wpa_cli_action_file",

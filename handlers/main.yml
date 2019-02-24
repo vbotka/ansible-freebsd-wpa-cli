@@ -5,7 +5,7 @@
   service:
     name: "netif"
     state: restarted
-  when: wpa_cli_enable|lower == "yes"
+  when: wpa_cli_enable == "YES"
 
 # EOF
 ...
