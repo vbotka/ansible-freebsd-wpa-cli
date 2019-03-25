@@ -2,7 +2,10 @@
 galaxy_info:
   role_name: freebsd_wpa_cli
   author: Vladimir Botka
-  description: Use wpa_cli action_file to configure wlan devices. Configuration of RC system.
+  description: |
+    Use wpa_cli action_file to configure wlan devices.
+    Configuration of RC system.
+
   company: https://botka.link
   github_branch: master
   license: BSD
