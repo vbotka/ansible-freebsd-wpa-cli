@@ -64,6 +64,9 @@ Details
 - *wpa_cli* can run in the background, listen to the events from *wpa_supplicant* and execute programmable actions (wpa_cli -B -i wlan0 -a action_file.sh).
 - *wpa_cli* provides reliable synchronous method to configure DHCP and routing of wireless adapters. See example of *action_file.sh* below. See also [template](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_action.sh.j2) to be installed.
 
+action_file.sh
+---------------
+
 ```
 #!/bin/sh
 ifname=$1
@@ -76,6 +79,9 @@ if [ "$cmd" = "DISCONNECTED" ]; then
     /etc/rc.d/dhclient forcestop $ifname
     /etc/rc.d/routing restart
 ```
+
+/etc/rc.d/wpa_cli
+-----------------
 
 To control *wpa_cli* rc script */etc/rc.d/wpa_cli* is created from [template](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_cli.j2)
 
@@ -110,6 +116,9 @@ required_files="${wpa_cli_action_file}"
 run_rc_command "$1"
 ```
 
+/etc/network.subr
+-----------------
+
 *wpa_cli* is started and stopped from *network.subr* . See [patch](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/files/network.subr.patch)
 
 ```
@@ -127,6 +136,9 @@ run_rc_command "$1"
 		/etc/rc.d/wpa_supplicant stop $1
 ```
 
+/etc/defaults
+--------------
+
 Following default variables are added to */etc/defaults* . See [patch](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/files/rc.conf.patch)
 
 ```
@@ -136,16 +148,35 @@ Following default variables are added to */etc/defaults* . See [patch](https://g
 /etc/defaults/rc.conf:wpa_cli_action_file="/root/bin/wpa_action.sh"
 ```
 
+DHCP and SYNCDHCP options
+-------------------------
+
 When the *dhclient* is controlled by wpa_cli, ifconfig must by configured in rc.conf to control *wpa_supplicant* only. Options [DHCP and SYNCDHCP](https://www.freebsd.org/doc/handbook/network-wireless.html) would start unwanted additional *dhclient*.
 
 ```
 ifconfig_wlan0="WPA"
+
 ```
+As a consequence service dhclient fails:
+
+```
+ /etc/rc.d/dhclient restart wlan0
+'wlan0' is not a DHCP-enabled interface
+dhclient already running?  (pid=45658).
+```
+Use wpa_cli instead to manualy reconfigure the interface
+
+```
+# wpa_cli -i wlan0 reconfigure
+OK
+```
+
+/etc/rc.d/netif
+---------------
 
 Service *netif* than starts/restarts and stops both wpa_supplicant and wpa_cli
 
 ```
-
 # ps ax | grep wpa
  4161  -  Ss      0:00.65 /usr/local/sbin/wpa_supplicant -s -B -i wlan0 -c /etc/wpa_supplicant.conf.wlan0 -D bsd -P /var/run/wpa_supplicant/wlan0.pid
  4171  -  Ss      0:00.44 /usr/local/sbin/wpa_cli -B -i wlan0 -P /var/run/wpa_cli/wlan0.pid -p /var/run/wpa_supplicant -a /root/bin/wpa_action.sh
