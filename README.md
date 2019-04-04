@@ -164,7 +164,7 @@ As a consequence service dhclient fails:
 'wlan0' is not a DHCP-enabled interface
 dhclient already running?  (pid=45658).
 ```
-Use wpa_cli instead to manualy reconfigure the interface
+Use wpa_cli instead to manually reconfigure the interface
 
 ```
 # wpa_cli -i wlan0 reconfigure
