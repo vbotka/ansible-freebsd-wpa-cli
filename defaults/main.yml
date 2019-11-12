@@ -18,6 +18,7 @@ wpacli_backup_conf: false
 # List of supported OS versions
 wpacli_versions_tested:
   - "12.0"
+  - "12.1"
 
 # Installation method.
 # Options are "packages" for binary packages or "ports"
@@ -72,11 +73,11 @@ wpacli_action_script_logfile: "/tmp/wpa_action.$ifname"
 
 # Parameters in /etc/rc.conf
 wpacli_rcconf:
-  - { key: "wpa_cli_enable", val: "{{ wpacli_enable }}" }
-  - { key: "wpa_cli_program", val: "{{ wpacli_program }}" }
-  - { key: "wpa_cli_ctrl_interface", val: "/var/run/wpa_supplicant" }
-  - { key: "wpa_cli_action_file",
-      val: "{{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}" }
+  - {key: "wpa_cli_enable", val: "{{ wpacli_enable }}"}
+  - {key: "wpa_cli_program", val: "{{ wpacli_program }}"}
+  - {key: "wpa_cli_ctrl_interface", val: "/var/run/wpa_supplicant"}
+  - {key: "wpa_cli_action_file",
+     val: "{{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}"}
 
 # fp_wpasupplicant_conf_ctrl_interface: "/var/run/wpa_supplicant"
 

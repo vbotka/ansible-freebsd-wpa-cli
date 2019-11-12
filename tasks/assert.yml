@@ -8,7 +8,7 @@
       To ignore set wpacli_assert_enable=False "
   when:
     - ansible_distribution_version not in wpacli_versions_tested
-    - wpacli_assert_enable | bool
+    - wpacli_assert_enable|bool
 
 # EOF
 ...
