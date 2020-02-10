@@ -2,7 +2,7 @@
 # tasks for vbotka.freebsd_wpa_cli
 
 - import_tasks: debug.yml
-  when: wpacli_debug
+  when: wpacli_debug|bool
   tags: [wpacli_debug, always]
 
 - import_tasks: assert.yml
