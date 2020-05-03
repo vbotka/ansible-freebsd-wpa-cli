@@ -1,71 +1,69 @@
-freebsd_wpa_cli
-===============
+# freebsd_wpa_cli
 
 [![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli)
 
 [Ansible role.](https://galaxy.ansible.com/vbotka/freebsd_wpa_cli/) FreeBSD. Configuration of RC system. Use wpa_cli action_file to configure wlan devices.
 
+Please feel free to [share your feedback and report issues](https://github.com/vbotka/ansible-freebsd-wpa-cli/issues). Contributions are welcome.
 
-Requirements
-------------
+
+## Requirements
 
 None.
 
-Recommended
------------
+
+## Recommended
 
 - [freebsd_postinstall](https://galaxy.ansible.com/vbotka/freebsd_postinstall) task [wpa_supplicant](https://github.com/vbotka/ansible-freebsd-postinstall/blob/master/tasks/wpasupplicant.yml)
 - [freebsd_network](https://galaxy.ansible.com/vbotka/freebsd_network)
 
 
-Role Variables
---------------
+## Role Variables
 
 Review defaults, templates and examples in vars.
 
-Dependencies
-------------
+
+## Dependencies
 
 None.
 
-Example playbooks
------------------
 
-1) Configure wpa_supplicant.
+## Example playbooks
+
+1) Configure wpa_supplicant
 
 ```
-# cat freebsd-postinstall.yml
+shell> cat freebsd-postinstall.yml
 - hosts: router
   roles:
     - vbotka.freebsd_postinstall
 
 
-# ansible-playbook freebsd-postinstall.yml -t fp_wpasupplicant
+shell> ansible-playbook freebsd-postinstall.yml -t fp_wpasupplicant
 ```
 
-2) Configure wpa_cli and network.
+2) Configure wpa_cli and network
 
 ```
-# cat freebsd-wpacli.yml
+shell> cat freebsd-wpacli.yml
 
 - hosts: router
   roles:
     - vbotka.freebsd_wpa_cli
     - vbotka.freebsd_network
 
-# ansible-playbook freebsd-wpacli.yml
+shell> ansible-playbook freebsd-wpacli.yml
 ```
 
-Details
--------
+
+## Details
 
 - [*wpa_cli*](https://www.freebsd.org/cgi/man.cgi?wpa_cli) is an utility developed, built and packaged together with [*wpa_supplicant*](https://w1.fi/).
 - *wpa_cli* is installed in the base system together with *wpa_supplicant*.
 - *wpa_cli* can run in the background, listen to the events from *wpa_supplicant* and execute programmable actions (wpa_cli -B -i wlan0 -a action_file.sh).
 - *wpa_cli* provides reliable synchronous method to configure DHCP and routing of wireless adapters. See example of *action_file.sh* below. See also [template](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_action.sh.j2) to be installed.
 
-action_file.sh
----------------
+### action_file.sh
 
 ```
 #!/bin/sh
@@ -80,8 +78,7 @@ if [ "$cmd" = "DISCONNECTED" ]; then
     /etc/rc.d/routing restart
 ```
 
-/etc/rc.d/wpa_cli
------------------
+### /etc/rc.d/wpa_cli
 
 To control *wpa_cli* rc script */etc/rc.d/wpa_cli* is created from [template](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_cli.j2)
 
@@ -116,13 +113,13 @@ required_files="${wpa_cli_action_file}"
 run_rc_command "$1"
 ```
 
-/etc/network.subr
------------------
+
+### /etc/network.subr
 
 *wpa_cli* is started and stopped from *network.subr* . See [patch](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/files/network.subr.patch)
 
 ```
-# grep -A 1 -B 3 wpa_cli /etc/network.subr
+shell> grep -A 1 -B 3 wpa_cli /etc/network.subr
 	if wpaif $1; then
 		/etc/rc.d/wpa_supplicant start $1
 		_cfg=0		# XXX: not sure this should count
@@ -136,20 +133,19 @@ run_rc_command "$1"
 		/etc/rc.d/wpa_supplicant stop $1
 ```
 
-/etc/defaults
---------------
+
+### /etc/defaults
 
 Following default variables are added to */etc/defaults* . See [patch](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/files/rc.conf.patch)
 
 ```
-# grep -r wpa_cli /etc/defaults/
+shell> grep -r wpa_cli /etc/defaults/
 /etc/defaults/rc.conf:wpa_cli_program="/usr/sbin/wpa_cli"
 /etc/defaults/rc.conf:wpa_cli_ctrl_interface="/var/run/wpa_supplicant"
 /etc/defaults/rc.conf:wpa_cli_action_file="/root/bin/wpa_action.sh"
 ```
 
-DHCP and SYNCDHCP options
--------------------------
+### DHCP and SYNCDHCP options
 
 When the *dhclient* is controlled by wpa_cli, ifconfig must by configured in rc.conf to control *wpa_supplicant* only. Options [DHCP and SYNCDHCP](https://www.freebsd.org/doc/handbook/network-wireless.html) would start unwanted additional *dhclient*.
 
@@ -160,19 +156,18 @@ ifconfig_wlan0="WPA"
 As a consequence service dhclient fails:
 
 ```
- /etc/rc.d/dhclient restart wlan0
+shell> /etc/rc.d/dhclient restart wlan0
 'wlan0' is not a DHCP-enabled interface
 dhclient already running?  (pid=45658).
 ```
 Use wpa_cli instead to manually reconfigure the interface
 
 ```
-# wpa_cli -i wlan0 reconfigure
+shell> wpa_cli -i wlan0 reconfigure
 OK
 ```
 
-/etc/rc.d/netif
----------------
+### /etc/rc.d/netif
 
 Service *netif* than starts/restarts and stops both wpa_supplicant and wpa_cli
 
@@ -182,19 +177,18 @@ Service *netif* than starts/restarts and stops both wpa_supplicant and wpa_cli
  4171  -  Ss      0:00.44 /usr/local/sbin/wpa_cli -B -i wlan0 -P /var/run/wpa_cli/wlan0.pid -p /var/run/wpa_supplicant -a /root/bin/wpa_action.sh
 ```
 
-License
--------
+
+## References
+
+- [hostapd and wpa_supplicant](https://w1.fi/)
+- [Practical rc.d scripting in BSD](https://www.freebsd.org/doc/en/articles/rc-scripting/index.html)
+
+
+## License
 
 [![license](https://img.shields.io/badge/license-BSD-red.svg)](https://www.freebsd.org/doc/en/articles/bsdl-gpl/article.html)
 
 
-Author Information
-------------------
+## Author Information
 
 [Vladimir Botka](https://botka.link)
-
-References
-----------
-
-- [hostapd and wpa_supplicant](https://w1.fi/)
-- [Practical rc.d scripting in BSD](https://www.freebsd.org/doc/en/articles/rc-scripting/index.html)
