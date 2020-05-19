@@ -9,6 +9,7 @@
   tags: [wpacli_assert, always]
 
 - import_tasks: packages.yml
+  when: wpacli_install|bool
   tags: wpacli_packages
 
 - import_tasks: wpa-cli.yml
