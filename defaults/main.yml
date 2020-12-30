@@ -22,6 +22,7 @@ wpacli_backup_conf: false
 wpacli_versions_tested:
   - "12.0"
   - "12.1"
+  - "12.2"
 
 # Installation method.
 # Options are "packages" for binary packages or "ports"
