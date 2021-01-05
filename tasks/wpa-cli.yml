@@ -19,7 +19,7 @@
 - name: "wpa-cli: Create action script
          {{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}"
   template:
-    src: wpa_action.sh.j2
+    src: "{{ wpacli_action_script_template }}"
     dest: "{{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}"
     owner: "{{ wpacli_action_script_owner }}"
     group: "{{ wpacli_action_script_group }}"

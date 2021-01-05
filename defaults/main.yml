@@ -70,10 +70,13 @@ wpacli_action_script_owner: "root"
 wpacli_action_script_group: "wheel"
 wpacli_action_script_mode: "0750"
 # Action script template.
-wpacli_action_script_template: "wpa_action.sh.j2"
+wpacli_action_script_template: "1.0.0-wpa_action.sh.j2"
 # Paramters used in the template.
 wpacli_action_script_log_to_file: false
 wpacli_action_script_logfile: "/tmp/wpa_action.$ifname"
+wpacli_action_script_ntp_set: false
+wpacli_action_script_ntp_server: "0.pool.ntp.org"
+wpacli_action_script_ntpdate_flags: "-b"
 
 # Parameters in /etc/rc.conf
 wpacli_rcconf:

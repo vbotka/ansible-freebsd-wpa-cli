@@ -40,13 +40,16 @@
          wpacli_action_script_mode [{{ wpacli_action_script_mode }}]
          wpacli_action_script_log_to_file [{{ wpacli_action_script_log_to_file }}]
          wpacli_action_script_logfile [{{ wpacli_action_script_logfile }}]
+         wpacli_action_script_ntp_set [{{ wpacli_action_script_ntp_set }}]
+         wpacli_action_script_ntp_server [{{ wpacli_action_script_ntp_server }}]
+         wpacli_action_script_ntpdate_flags [{{ wpacli_action_script_ntpdate_flags }}]
 
          wpacli_rcconf
          {{ wpacli_rcconf|to_yaml }}
 
          fp_wpasupplicant_conf_ctrl_interface [{{ fp_wpasupplicant_conf_ctrl_interface|default('UNDEFINED') }}]
   debug:
-    msg: "{{ msg.split('\n') }}"
+    msg: "{{ msg.split('\n')[:-1] }}"
 
 # EOF
 ...
