@@ -1,0 +1,46 @@
+README
+======
+
+Documentation of an Ansible project
+
+* Copy template from vbotka.ansible/contrib/docs
+
+  shell> find docs -type f | xargs sed -i 's/__AUTHOR_FULL_NAME__/Vladimir Botka/g'
+  shell> find docs -type f | xargs sed -i 's/__COPYRIGHT_HOLDER__/Vladimir Botka/g'
+  shell> find docs -type f | xargs sed -i 's/__GITHUB_USERNAME__/vbotka/g'
+  shell> find docs -type f | xargs sed -i 's/__PROJECT__/wpa_cli/g'
+  shell> find docs -type f | xargs sed -i 's/ansible-wpa_cli/ansible-freebsd-wpa-cli/g'
+
+* Update version
+
+  shell> grep "version =" source/conf.py 
+  version = '0.1'
+
+* See annotation/README
+
+  Create lists of files and vars
+  shell> ls -1 tasks > docs/annotation/tasks-list.txt
+  shell> ls -1 templates/ > docs/annotation/templates-list.txt
+  shell> cd annotation; ansible-playbook pb-annotations.yml
+
+* Create source/annotation-*.rst
+
+  shell> ansible-playbook playbook.yml
+
+* Create html documents
+
+  shell> make html
+
+* Create LaTex and PDF documents
+
+  shell> make latexpdf
+
+* Create epub documents
+
+  shell> make epub
+
+* See the documents
+
+  shell> browser build/html/index.html
+
+# EOF

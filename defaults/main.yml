@@ -80,10 +80,10 @@ wpacli_action_script_ntpdate_flags: "-b"
 
 # Parameters in /etc/rc.conf
 wpacli_rcconf:
-  - {key: "wpa_cli_enable", val: "{{ wpacli_enable }}"}
-  - {key: "wpa_cli_program", val: "{{ wpacli_program }}"}
-  - {key: "wpa_cli_ctrl_interface", val: "/var/run/wpa_supplicant"}
-  - {key: "wpa_cli_action_file",
+  - {key: wpa_cli_enable, val: "{{ wpacli_enable }}"}
+  - {key: wpa_cli_program, val: "{{ wpacli_program }}"}
+  - {key: wpa_cli_ctrl_interface, val: "/var/run/wpa_supplicant"}
+  - {key: wpa_cli_action_file,
      val: "{{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}"}
 
 # fp_wpasupplicant_conf_ctrl_interface: "/var/run/wpa_supplicant"
