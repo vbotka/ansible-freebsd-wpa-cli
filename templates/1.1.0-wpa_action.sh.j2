@@ -85,7 +85,7 @@ if [ "$cmd" = "CONNECTED" ]; then
     log_SSID
     dhclient_forcestart
     routing_restart
-    if [ "$ntp_set" = "1" ]; then # NOTE 3
+    if [ "$ntp_set" = "1" ]; then  # NOTE 3
 	ntpd_stop
 	ntpdate_settimeofday
 	ntpd_start
@@ -114,8 +114,8 @@ exit 0
 # wpa_cli -B -i wlan1 -a /root/bin/wpa_action.sh
 
 # NOTE 3
-# /etc/rc.d/ntpdate executes before /etc/rc.d/wpa_supplicant
-# In a wifi-only system /etc/rc.d/ntpdate can't work without network
+# In a wifi-only system, /etc/rc.d/ntpdate will time-out if it
+# executes before /etc/rc.d/wpa_supplicant connects to the network
 # (See rcorder /etc/rc.d/*)
 
 # EOF
