@@ -1,7 +1,6 @@
 # freebsd_wpa_cli
 
-[![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli)[![Documentation Status](https://readthedoc\
-s.org/projects/docs/badge/?version=latest)](https://ansible-freebsd-wpa-cli.readthedocs.io/en/latest/)
+[![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli)[![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://ansible-freebsd-wpa-cli.readthedocs.io/en/latest/)
 
 [Documentation at readthedocs.io](https://ansible-freebsd-wpa-cli.readthedocs.io)
 
