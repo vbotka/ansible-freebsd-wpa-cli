@@ -44,6 +44,7 @@
          wpacli_action_script_ntp_server [{{ wpacli_action_script_ntp_server }}]
          wpacli_action_script_ntpdate_flags [{{ wpacli_action_script_ntpdate_flags }}]
 
+         wpacli_ctrl_interface: [{{ wpacli_ctrl_interface }}]
          wpacli_rcconf
          {{ wpacli_rcconf|to_yaml }}
 

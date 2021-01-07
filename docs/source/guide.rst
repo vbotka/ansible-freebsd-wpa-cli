@@ -102,7 +102,7 @@ Create simple playbook that calls the role (10) at a single host srv.example.com
 Debug
 *****
 
-Many tasks will display additional information when the variable :index:`wpacli_debug` is enabled. Enable debug output either in the configuration
+Some tasks will display additional information when the variable :index:`wpacli_debug` is enabled. Enable debug output either in the configuration
 
 .. code-block:: yaml
    :emphasize-lines: 1
@@ -241,11 +241,6 @@ Variables
 *************
 Best practice
 *************
-
-.. _ug_bp_firstboot:
-
-Recommended configuration after the installation of OS
-======================================================
 
 Test syntax
 

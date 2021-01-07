@@ -29,7 +29,7 @@ wpacli_versions_tested:
 freebsd_install_method: "packages"
 
 # If installation method is "ports" use binary packages if
-# available. Default: false
+# available
 freebsd_use_packages: true
 
 # Number of times an unsuccessful installation is retried
@@ -49,7 +49,7 @@ freebsd_install_delay: 5
 #       tasks_from: wpasupplicant.yml
 wpacli_program: "/usr/sbin/wpa_cli"
 
-# Install packages.
+# Install packages
 wpacli_packages:
   - security/wpa_supplicant
 
@@ -59,19 +59,19 @@ wpacli_pid_dir_owner: "root"
 wpacli_pid_dir_group: "wheel"
 wpacli_pid_dir_mode: "0750"
 
-# Create wpa_cli action script.
+# Create wpa_cli action script
 wpacli_action_script: false
-# Path to the action script.
+# Path to the action script
 wpacli_action_script_dir: "/root/bin"
-# Filename of the action script.
+# Filename of the action script
 wpacli_action_script_file: "wpa_action.sh"
-# Ownership and permissions of the action script.
+# Ownership and permissions of the action script
 wpacli_action_script_owner: "root"
 wpacli_action_script_group: "wheel"
 wpacli_action_script_mode: "0750"
-# Action script template.
+# Action script template
 wpacli_action_script_template: "1.0.0-wpa_action.sh.j2"
-# Paramters used in the template.
+# Paramters used in the template
 wpacli_action_script_log_to_file: false
 wpacli_action_script_logfile: "/tmp/wpa_action.$ifname"
 wpacli_action_script_ntp_set: false
@@ -79,13 +79,15 @@ wpacli_action_script_ntp_server: "0.pool.ntp.org"
 wpacli_action_script_ntpdate_flags: "-b"
 
 # Parameters in /etc/rc.conf
+wpacli_ctrl_interface: "/var/run/wpa_supplicant"
 wpacli_rcconf:
   - {key: wpa_cli_enable, val: "{{ wpacli_enable }}"}
   - {key: wpa_cli_program, val: "{{ wpacli_program }}"}
-  - {key: wpa_cli_ctrl_interface, val: "/var/run/wpa_supplicant"}
+  - {key: wpa_cli_ctrl_interface, val: "{{ wpacli_ctrl_interface }}"}
   - {key: wpa_cli_action_file,
      val: "{{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}"}
 
+# See role: vbotka.freebsd_postinstall task: wpasupplicant.yml
 # fp_wpasupplicant_conf_ctrl_interface: "/var/run/wpa_supplicant"
 
 # EOF
