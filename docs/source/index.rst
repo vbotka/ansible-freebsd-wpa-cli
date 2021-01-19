@@ -1,4 +1,4 @@
-Ansible role freebsd_wpa_cli
+Ansible role FreeBSD wpa_cli
 ============================
 
 This `role <https://galaxy.ansible.com/vbotka/freebsd_wpa_cli/>`_ and the
@@ -10,11 +10,12 @@ and report issues
 
 .. toctree::
    :maxdepth: 2
-   :caption: Table of Contents:
+   :caption: Table of Contents
 
    qsg
    guide
    annotation
+   collection-bsd
    copyright
    legalnotice
 
