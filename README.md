@@ -1,6 +1,6 @@
 # freebsd_wpa_cli
 
-[![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli)[![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://ansible-freebsd-wpa-cli.readthedocs.io/en/latest/)
+[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/freebsd_wpa_cli)[![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli)[![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://ansible-freebsd-wpa-cli.readthedocs.io/en/latest/)
 
 [Documentation at readthedocs.io](https://ansible-freebsd-wpa-cli.readthedocs.io)
 
@@ -30,7 +30,9 @@
 
 The goal of this configuration is to start *dhclient* and other system services (e.g. *routing*, *ntpdate*, *ntpd*, ...) after the wifi interface connects to the network. The utility *wpa_cli*, running in the background, will be notified by *wpa_supplicant* when the interface connects or disconnects to/from the network. On such event *wpa_cli* executes the action file (-a action_file). See [templates](https://github.com/vbotka/ansible-freebsd-wpa-cli/tree/master/templates) what pre-configured scripts are available. For example, [1.1.0-wpa_action.sh](https://raw.githubusercontent.com/vbotka/ansible-freebsd-wpa-cli/master/templates/1.1.0-wpa_action.sh.j2), after the connection, starts *dhclient*, restarts *routing*, and optionally synchronize date and time. This solves the potential problem of synchronizing date and time by *settimeofday* at boot time of a wireless-only system. If *wpa_supplicant* doesn't manage to connect to the network by the time *ntpdate* is executed *ntpdate* will time-out. Then, in most systems, the *ntpd* service will start (see `rcorder /etc/rc.d/*`). When the hardware device has no battery and no RTC, the offset might be huge. In this case [*ntpd* will reject the offset and will terminate itself, believing something very strange must have happened](http://www.ntp.org/ntpfaq/NTP-s-algo.htm#Q-ALGO-BASIC-STEP-SLEW).
 
-Feel free to [share your feedback and report issues](https://github.com/vbotka/ansible-freebsd-wpa-cli/issues). Contributions are welcome.
+Feel free to [share your feedback and report issues](https://github.com/vbotka/ansible-freebsd-wpa-cli/issues).
+
+[Contributions are welcome](https://github.com/firstcontributions/first-contributions).
 
 
 ## <a name="Requirements"></a>Requirements
