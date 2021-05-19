@@ -1,7 +1,7 @@
 ---
 
 - name: "wpa-cli: Create pid dir {{ wpacli_pid_dir }}"
-  file:
+  ansible.builtin.file:
     state: directory
     path: "{{ wpacli_pid_dir }}"
     owner: "{{ wpacli_pid_dir_owner }}"
@@ -10,7 +10,7 @@
   tags: wpacli_pid_dir
 
 - name: "wpa-cli: Create {{ wpacli_action_script_dir }}"
-  file:
+  ansible.builtin.file:
     state: directory
     path: "{{ wpacli_action_script_dir }}"
   when: wpacli_action_script|bool
@@ -18,7 +18,7 @@
 
 - name: "wpa-cli: Create action script
          {{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}"
-  template:
+  ansible.builtin.template:
     src: "{{ wpacli_action_script_template }}"
     dest: "{{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}"
     owner: "{{ wpacli_action_script_owner }}"

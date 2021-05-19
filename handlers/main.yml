@@ -2,8 +2,8 @@
 # handlers file for vbotka.freebsd_wpa_cli
 
 - name: restart netif
-  service:
-    name: "netif"
+  ansible.builtin.service:
+    name: netif
     state: restarted
   when: wpacli_enable == "YES"
 

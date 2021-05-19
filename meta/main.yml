@@ -18,4 +18,7 @@ galaxy_info:
     - wpacli
     - wpasupplicant
 dependencies: []
+collections:
+  - ansible.posix
+  - community.general
 ...
