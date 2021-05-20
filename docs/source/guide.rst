@@ -47,19 +47,20 @@ The most convenient way how to install an Ansible role is to use
 :index:`Ansible Galaxy` CLI ``ansible-galaxy``. The utility comes with the
 standard Ansible package and provides the user with a simple interface
 to the Ansible Galaxy's services. For example, take a look at the
-current status of the role
+current status of the role ::
 
-.. code-block:: sh
-   :emphasize-lines: 1
+   shell> ansible-galaxy role info vbotka.freebsd_wpa_cli
 
-   shell> ansible-galaxy info vbotka.freebsd_wpa_cli
+and install it ::
 
-and install it
+    shell> ansible-galaxy role install vbotka.freebsd_wpa_cli
 
-.. code-block:: sh
-   :emphasize-lines: 1
+Install the collections
+`community.general <https://docs.ansible.com/ansible/latest/collections/community/general/>`_ and
+`ansible.posix <https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html#plugins-in-ansible-posix/>`_  ::
 
-    shell> ansible-galaxy install vbotka.freebsd_wpa_cli
+    shell> ansible-galaxy collection install ansible.posix
+    shell> ansible-galaxy collection install community.general
 
 .. seealso::
    * See `freebsd_postinstall <https://galaxy.ansible.com/vbotka/freebsd_postinstall/>`_

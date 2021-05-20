@@ -28,7 +28,7 @@ Synopsis: {{ i.synopsis }}
    * Handlers :ref:`as_handlers_{{ ii }}.yml`
 {% endfor %}
 {% for ii in i.seealso.templates|default([]) %}
-   * Template :ref:`as_template_{{ ii }}`
+   * Template :ref:`as_template_{{ ii }}.j2`
 {% endfor %}
 {% for ii in i.seealso.others|default([]) %}
    * {{ ii }}

@@ -37,7 +37,10 @@ Feel free to [share your feedback and report issues](https://github.com/vbotka/a
 
 ## <a name="Requirements"></a>Requirements
 
-None.
+### Collections
+
+* ansible.posix
+* community.general
 
 
 ## <a name="Recommended"></a>Recommended

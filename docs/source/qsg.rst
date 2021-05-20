@@ -9,8 +9,12 @@ an example of how to configure ``wpa_cli``.
 
 * Install the role ``vbotka.freebsd_wpa_cli`` ::
 
-    shell> ansible-galaxy install vbotka.freebsd_wpa_cli
+    shell> ansible-galaxy role install vbotka.freebsd_wpa_cli
 
+* Install the collections ``ansible.posix`` and ``community.general`` ::
+
+    shell> ansible-galaxy collection install ansible.posix
+    shell> ansible-galaxy collection install community.general
 
 * Create the playbook ``playbook.yml`` for single host srv.example.com (2)
 
