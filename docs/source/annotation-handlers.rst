@@ -3,7 +3,7 @@
 Handlers
 ========
 
-.. _as_handlers-main.yml:
+.. _as_handler_handlers-main.yml:
 
 main.yml
 --------

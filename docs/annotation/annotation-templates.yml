@@ -2,7 +2,7 @@
 mytemplates: 
 
   - file: 1.0.0-wpa_action.sh.j2
-    link: template_1.0.0-wpa_action.sh.j2
+    link: 1.0.0-wpa_action.sh.j2
     path: templates/1.0.0-wpa_action.sh.j2
     synopsis: |
       Template 1.0.0-wpa_action.sh.
@@ -14,7 +14,7 @@ mytemplates:
     warning: []
 
   - file: 1.1.0-wpa_action.sh.j2
-    link: template_1.1.0-wpa_action.sh.j2
+    link: 1.1.0-wpa_action.sh.j2
     path: templates/1.1.0-wpa_action.sh.j2
     synopsis: |
       Template 1.1.0-wpa_action.sh.
@@ -26,7 +26,7 @@ mytemplates:
     warning: []
 
   - file: wpa_cli.j2
-    link: template_wpa_cli.j2
+    link: wpa_cli.j2
     path: templates/wpa_cli.j2
     synopsis: |
       Template wpa_cli.
