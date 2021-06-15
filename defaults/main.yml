@@ -28,7 +28,7 @@ wpacli_versions_tested:
 
 # Installation method.
 # Options are "packages" for binary packages or "ports"
-freebsd_install_method: "packages"
+freebsd_install_method: packages
 
 # If installation method is "ports" use binary packages if
 # available
@@ -65,6 +65,9 @@ wpacli_pid_dir_mode: "0750"
 wpacli_action_script: false
 # Path to the action script
 wpacli_action_script_dir: /root/bin
+wpacli_action_script_dir_owner: root
+wpacli_action_script_dir_group: wheel
+wpacli_action_script_dir_mode: "0755"
 # Filename of the action script
 wpacli_action_script_file: wpa_action.sh
 # Ownership and permissions of the action script
