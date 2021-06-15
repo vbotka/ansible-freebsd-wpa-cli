@@ -35,7 +35,7 @@ Feel free to [share your feedback and report issues](https://github.com/vbotka/a
 [Contributions are welcome](https://github.com/firstcontributions/first-contributions).
 
 
-## <a name="Requirements"></a>Requirements
+## <a name="Requirements and dependencies"></a>Requirements and dependencies
 
 ### Collections
 
@@ -51,12 +51,7 @@ Feel free to [share your feedback and report issues](https://github.com/vbotka/a
 
 ## <a name="Role-Variables"></a>Role Variables
 
-Review defaults, templates and examples in vars.
-
-
-## <a name="Dependencies"></a>Dependencies
-
-None.
+See defaults, templates and examples in vars.
 
 
 ## <a name="Example-playbooks"></a>Example playbooks

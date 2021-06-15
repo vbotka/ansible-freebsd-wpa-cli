@@ -2,8 +2,7 @@
 
 - name: "packages: Install packages"
   community.general.pkgng:
-    name: "{{ item }}"
-  loop: "{{ wpacli_packages }}"
+    name: "{{ wpacli_packages }}"
   register: result
   retries: "{{ freebsd_install_retries }}"
   until: result is succeeded

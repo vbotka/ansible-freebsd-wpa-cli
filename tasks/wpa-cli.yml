@@ -13,6 +13,9 @@
   ansible.builtin.file:
     state: directory
     path: "{{ wpacli_action_script_dir }}"
+    owner: "{{ wpacli_action_script_dir_owner }}"
+    group: "{{ wpacli_action_script_dir_group }}"
+    mode: "{{ wpacli_action_script_dir_mode }}"
   when: wpacli_action_script|bool
   tags: wpacli_action_script
 
