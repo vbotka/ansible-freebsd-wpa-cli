@@ -4,7 +4,7 @@
 - name: Import debug.yml
   ansible.builtin.import_tasks: debug.yml
   when: wpacli_debug|bool
-  tags: [wpacli_debug, always]
+  tags: wpacli_debug
 
 - name: Import assert.yml
   ansible.builtin.import_tasks: assert.yml

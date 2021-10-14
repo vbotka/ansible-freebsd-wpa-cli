@@ -1,6 +1,6 @@
 ---
 
-- name: "Debug"
+- name: Debug
   vars:
     msg: |-
          ansible_architecture [{{ ansible_architecture }}]
@@ -53,7 +53,7 @@
 
          fp_wpasupplicant_conf_ctrl_interface [{{ fp_wpasupplicant_conf_ctrl_interface|default('UNDEFINED') }}]
   ansible.builtin.debug:
-    msg: "{{ msg.split('\n') }}"
+    msg: "{{ '{}'.format(msg) }}"
 
 # EOF
 ...
