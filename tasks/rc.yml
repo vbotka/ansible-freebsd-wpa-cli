@@ -6,7 +6,7 @@
     dest: /etc/rc.d/wpa_cli
     owner: root
     group: wheel
-    mode: "0555"
+    mode: '0555'
     backup: "{{ wpacli_backup_conf }}"
   tags: wpacli_rc_script
 
