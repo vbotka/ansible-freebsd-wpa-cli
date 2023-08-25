@@ -223,4 +223,4 @@ Service *netif* than starts/restarts and stops both wpa_supplicant and wpa_cli
 
 ## <a name="Author-Information"></a>Author Information
 
-[Vladimir Botka](https://botka.link)
+[Vladimir Botka](https://botka.info)
