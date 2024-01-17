@@ -58,7 +58,7 @@ See defaults, templates and examples in vars.
 
 1) Configure wpa_supplicant
 
-```
+```yaml
 shell> cat freebsd-postinstall.yml
 - hosts: router
   roles:
@@ -70,7 +70,7 @@ shell> ansible-playbook freebsd-postinstall.yml -t fp_wpasupplicant
 
 2) Configure wpa_cli and network
 
-```
+```yaml
 shell> cat freebsd-wpacli.yml
 
 - hosts: router
@@ -92,7 +92,7 @@ shell> ansible-playbook freebsd-wpacli.yml
 
 ### <a name=""></a>action_file.sh
 
-```
+```sh
 #!/bin/sh
 ifname=$1
 cmd=$2
@@ -110,7 +110,7 @@ if [ "$cmd" = "DISCONNECTED" ]; then
 
 To control *wpa_cli* rc script */etc/rc.d/wpa_cli* is created from [template wpa_cli.j2](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_cli.j2)
 
-```
+```sh
 #!/bin/sh
 
 # PROVIDE: wpa_cli
@@ -146,7 +146,7 @@ run_rc_command "$1"
 
 *wpa_cli* is started and stopped from *network.subr* . See [patch](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/files/network.subr.patch)
 
-```
+```sh
 shell> grep -A 1 -B 3 wpa_cli /etc/network.subr
 	if wpaif $1; then
 		/etc/rc.d/wpa_supplicant start $1
@@ -166,7 +166,7 @@ shell> grep -A 1 -B 3 wpa_cli /etc/network.subr
 
 Following default variables are added to */etc/defaults* . See [patch](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/files/rc.conf.patch)
 
-```
+```sh
 shell> grep -r wpa_cli /etc/defaults/
 /etc/defaults/rc.conf:wpa_cli_program="/usr/sbin/wpa_cli"
 /etc/defaults/rc.conf:wpa_cli_ctrl_interface="/var/run/wpa_supplicant"
@@ -178,18 +178,18 @@ shell> grep -r wpa_cli /etc/defaults/
 
 When the *dhclient* is controlled by wpa_cli, ifconfig must by configured in rc.conf to control *wpa_supplicant* only. Options [DHCP and SYNCDHCP](https://www.freebsd.org/doc/handbook/network-wireless.html) would start unwanted additional *dhclient*.
 
-```
+```ini
 ifconfig_wlan0="WPA"
 
 ```
-As a consequence service dhclient fails:
+As a consequence, service dhclient fails:
 
 ```
 shell> /etc/rc.d/dhclient restart wlan0
 'wlan0' is not a DHCP-enabled interface
 dhclient already running?  (pid=45658).
 ```
-Use wpa_cli instead to manually reconfigure the interface
+Instead, use wpa_cli to manually reconfigure the interface
 
 ```
 shell> wpa_cli -i wlan0 reconfigure
@@ -199,9 +199,9 @@ OK
 
 ### <a name="/etc/rc.d/netif"></a>/etc/rc.d/netif
 
-Service *netif* than starts/restarts and stops both wpa_supplicant and wpa_cli
+Then, the service *netif* starts/restarts and stops both wpa_supplicant and wpa_cli
 
-```
+```sh
 # ps ax | grep wpa
  4161  -  Ss      0:00.65 /usr/local/sbin/wpa_supplicant -s -B -i wlan0 -c /etc/wpa_supplicant.conf.wlan0 -D bsd -P /var/run/wpa_supplicant/wlan0.pid
  4171  -  Ss      0:00.44 /usr/local/sbin/wpa_cli -B -i wlan0 -P /var/run/wpa_cli/wlan0.pid -p /var/run/wpa_supplicant -a /root/bin/wpa_action.sh
