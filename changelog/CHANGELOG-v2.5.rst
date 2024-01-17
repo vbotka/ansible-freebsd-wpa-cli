@@ -19,11 +19,11 @@ Major Changes
 Minor Changes
 -------------
 * Bump docs 2.5.0
-* Update docs requirements readthedocs-sphinx-search==0.3.2
 * Update README
 
 Bugfixes
 --------
+* Fix: Bump readthedocs-sphinx-search from 0.3.1 to 0.3.2 in /docs #1
 
 Breaking Changes / Porting Guide
 --------------------------------
