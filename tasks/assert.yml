@@ -1,6 +1,5 @@
 ---
-
-- name: "assert: Check FreeBSD version."
+- name: "Assert: Check FreeBSD version."
   ansible.builtin.assert:
     that: ansible_distribution_version in wpacli_versions_tested
     fail_msg: |
@@ -11,4 +10,3 @@
   when: wpacli_assert_enable|bool
 
 # EOF
-...
