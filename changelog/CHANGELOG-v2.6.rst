@@ -21,6 +21,7 @@ Minor Changes
 * Update Ansible lint config.
 * Bump docs 2.6.0
 * Update README.
+* Fix Ansible lint.
 
 Bugfixes
 --------

@@ -15,10 +15,10 @@
     owner: "{{ wpacli_action_script_dir_owner }}"
     group: "{{ wpacli_action_script_dir_group }}"
     mode: "{{ wpacli_action_script_dir_mode }}"
-  when: wpacli_action_script|bool
+  when: wpacli_action_script | bool
   tags: wpacli_action_script
 
-- name: "Wpa-cli: Create action script {{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}"
+- name: "Wpa-cli: Create action script {{ wpacli_action_script_dir ~ '/' ~ wpacli_action_script_file }}"
   ansible.builtin.template:
     src: "{{ wpacli_action_script_template }}"
     dest: "{{ wpacli_action_script_dir }}/{{ wpacli_action_script_file }}"
@@ -26,7 +26,7 @@
     group: "{{ wpacli_action_script_group }}"
     mode: "{{ wpacli_action_script_mode }}"
     backup: "{{ wpacli_backup_conf }}"
-  when: wpacli_action_script|bool
+  when: wpacli_action_script | bool
   tags: wpacli_action_script
 
 # EOF
