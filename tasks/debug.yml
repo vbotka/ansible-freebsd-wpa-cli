@@ -1,5 +1,5 @@
 ---
-- name: Debug
+- name: "Debug wpacli_debug={{ wpacli_debug }}"
   vars:
     msg: |-
       ansible_architecture: {{ ansible_architecture }}
@@ -46,11 +46,11 @@
       wpacli_action_script_ntp_server: {{ wpacli_action_script_ntp_server }}
       wpacli_action_script_ntpdate_flags: {{ wpacli_action_script_ntpdate_flags }}
 
-      wpacli_ctrl_interface: [{{ wpacli_ctrl_interface }}]
+      wpacli_ctrl_interface: {{ wpacli_ctrl_interface }}
       wpacli_rcconf:
         {{ wpacli_rcconf | to_yaml(indent=2) | indent(2) }}
 
-      fp_wpasupplicant_conf_ctrl_interface: {{ fp_wpasupplicant_conf_ctrl_interface | default('UNDEFINED') }}
+      fp_wpasupplicant_conf_ctrl_interface: {{ fp_wpasupplicant_conf_ctrl_interface | d('UNDEFINED') }}
   ansible.builtin.debug:
     msg: "{{ '{}'.format(msg) }}"
 

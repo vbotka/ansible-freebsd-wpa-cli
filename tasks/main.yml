@@ -3,7 +3,7 @@
 
 - name: Import debug.yml
   ansible.builtin.import_tasks: debug.yml
-  when: wpacli_debug|bool
+  when: wpacli_debug | bool
   tags: wpacli_debug
 
 - name: Import assert.yml
@@ -12,7 +12,7 @@
 
 - name: Import packages.yml
   ansible.builtin.import_tasks: packages.yml
-  when: wpacli_install|bool
+  when: wpacli_install | bool
   tags: wpacli_packages
 
 - name: Import wpa-cli.yml
@@ -25,6 +25,6 @@
 
 - name: Import rcconf.yml
   ansible.builtin.import_tasks: rcconf.yml
-  tags: wpacli_rc_conf
+  tags: wpacli_rcconf
 
 # EOF

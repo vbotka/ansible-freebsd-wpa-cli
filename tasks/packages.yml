@@ -11,7 +11,7 @@
 - name: "Packages: Install ports"
   community.general.portinstall:
     name: "{{ item }}"
-    use_packages: "{{ freebsd_use_packages | default(false) }}"
+    use_packages: "{{ freebsd_use_packages | d(false) }}"
   loop: "{{ wpacli_packages }}"
   register: result
   retries: "{{ freebsd_install_retries }}"
