@@ -14,7 +14,7 @@ Synopsis: Main task.
 Import handlers.
 
 
-[`handlers/main.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/handlers/main.yml>`_]
+[`handlers/main.yml <https://github.com/vbotka/ansible-__PROJECT__/blob/__BRANCH__/handlers/main.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
@@ -22,4 +22,7 @@ Import handlers.
     :language: Yaml
     :emphasize-lines: 1,2
     :linenos:
+
+
+
 
