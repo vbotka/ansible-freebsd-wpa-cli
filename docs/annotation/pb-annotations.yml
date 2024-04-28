@@ -5,6 +5,7 @@
   debugger: on_failed
 
   tasks:
+
     - name: Read vars
       ansible.builtin.include_vars:
         dir: vars
@@ -15,8 +16,6 @@
 
     # Tasks
     - tags: tasks
-
-      # Handlers
       block:
         - name: Set empty list my_files
           ansible.builtin.set_fact:
@@ -26,8 +25,8 @@
             my_files: "{{ my_files + [[filename] + [ext] + [item]] }}"
           loop: "{{ lookup('file', 'tasks-list.txt').splitlines() }}"
           vars:
-            filename: "{{ (item|basename|splitext).0 }}"
-            ext: "{{ (item|basename|splitext).1 }}"
+            filename: "{{ (item | basename | splitext).0 }}"
+            ext: "{{ (item | basename | splitext).1 }}"
         - name: Debug my_files
           ansible.builtin.debug:
             var: my_files
@@ -35,9 +34,9 @@
           ansible.builtin.template:
             src: annotation-tasks.yml.j2
             dest: annotation-tasks.yml
-    - tags: handlers
 
-      # Templates
+      # Handlers
+    - tags: handlers
       block:
         - name: Set empty list my_files
           ansible.builtin.set_fact:
@@ -47,8 +46,8 @@
             my_files: "{{ my_files + [[filename] + [ext] + [item]] }}"
           loop: "{{ lookup('file', 'handlers-list.txt').splitlines() }}"
           vars:
-            filename: "{{ (item|basename|splitext).0 }}"
-            ext: "{{ (item|basename|splitext).1 }}"
+            filename: "{{ (item | basename | splitext).0 }}"
+            ext: "{{ (item | basename | splitext).1 }}"
         - name: Debug my_files
           ansible.builtin.debug:
             msg: "{{ item.0 }}{{ item.1 }} {{ item.2 }}"
@@ -59,9 +58,9 @@
           ansible.builtin.template:
             src: annotation-handlers.yml.j2
             dest: annotation-handlers.yml
-    - tags: templates
 
-      # EOF
+      # Templates
+    - tags: templates
       block:
         - name: Set empty list my_files
           ansible.builtin.set_fact:
@@ -71,8 +70,8 @@
             my_files: "{{ my_files + [[filename] + [ext] + [item]] }}"
           loop: "{{ lookup('file', 'templates-list.txt').splitlines() }}"
           vars:
-            filename: "{{ (item|basename|splitext).0 }}"
-            ext: "{{ (item|basename|splitext).1 }}"
+            filename: "{{ (item | basename | splitext).0 }}"
+            ext: "{{ (item | basename | splitext).1 }}"
         - name: Debug my_files
           ansible.builtin.debug:
             var: my_files
@@ -80,3 +79,5 @@
           ansible.builtin.template:
             src: annotation-templates.yml.j2
             dest: annotation-templates.yml
+
+# EOF
