@@ -1,5 +1,5 @@
 ---
-mytemplates: 
+mytemplates:
 
   - file: 1.0.0-wpa_action.sh.j2
     link: 1.0.0-wpa_action.sh.j2

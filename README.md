@@ -1,6 +1,6 @@
 # freebsd_wpa_cli
 
-[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/freebsd_wpa_cli)[![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-wpa-cli)[![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://ansible-freebsd-wpa-cli.readthedocs.io/en/latest/)
+[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/freebsd_wpa_cli)[![Build Status](https://app.travis-ci.com/vbotka/ansible-freebsd-wpa-cli.svg?branch=master)](https://app.travis-ci.com/vbotka/ansible-freebsd-wpa-cli)[![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://ansible-freebsd-wpa-cli.readthedocs.io/en/latest/)[![GitHub tag](https://img.shields.io/github/v/tag/vbotka/ansible-freebsd-wpa-cli)](https://github.com/vbotka/ansible-freebsd-wpa-cli/tags)
 
 [Documentation at readthedocs.io](https://ansible-freebsd-wpa-cli.readthedocs.io)
 
@@ -19,6 +19,7 @@
   * [/etc/defaults](#/etc/defaults)
   * [DHCP and SYNCDHCP options](#DHCP-and-SYNCDHCP-options)
   * [/etc/rc.d/netif](#/etc/rc.d/netif)
+* [Ansible Lint](#Ansible-Lint)
 * [References](#References)
 * [License](#License)
 * [Author Information](#Author-Information)
@@ -208,12 +209,24 @@ Then, the service *netif* starts/restarts and stops both wpa_supplicant and wpa_
 ```
 
 
+## <a name="Ansible-Lint"></a>Ansible Lint
+
+Use the configuration file *.ansible-lint.local* when running
+*ansible-lint*. Some rules might be disabled and some warnings might
+be ignored. See the notes in the configuration file.
+
+```bash
+shell> ansible-lint -c .ansible-lint.local
+```
+
+
 ## <a name="References"></a>References
 
 - [hostapd and wpa_supplicant](https://w1.fi/)
 - [Practical rc.d scripting in BSD](https://www.freebsd.org/doc/en/articles/rc-scripting/index.html)
-- [32.3. Wireless Networking](https://www.freebsd.org/doc/handbook/network-wireless.html)
-- [30.6. Dynamic Host Configuration Protocol (DHCP)](https://www.freebsd.org/doc/handbook/network-dhcp.html)
+- [Wireless Advanced Authentication](https://docs.freebsd.org/en/books/handbook/advanced-networking/#network-advanced-wireless)
+- [Dynamic Host Configuration Protocol (DHCP)](https://docs.freebsd.org/en/books/handbook/network-servers/#network-dhcp)
+
 
 
 ## <a name="License"></a>License
