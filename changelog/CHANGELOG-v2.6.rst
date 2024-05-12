@@ -17,7 +17,11 @@ Major Changes
 
 Minor Changes
 -------------
-Bump docs version.
+* Bump docs version.
+
+Bugfixes
+--------
+* Fix templates docs/annotation
 
 
 2.6.0

@@ -14,7 +14,7 @@ Synopsis: Template 1.0.0-wpa_action.sh.
 Description of the template.
 
 
-[`templates/1.0.0-wpa_action.sh.j2 <https://github.com/vbotka/ansible-__PROJECT__/blob/__BRANCH__/templates/1.0.0-wpa_action.sh.j2>`_]
+[`templates/1.0.0-wpa_action.sh.j2 <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/1.0.0-wpa_action.sh.j2>`_]
 
 .. highlight:: jinja
     :linenothreshold: 5
@@ -37,7 +37,7 @@ Synopsis: Template 1.1.0-wpa_action.sh.
 Description of the template.
 
 
-[`templates/1.1.0-wpa_action.sh.j2 <https://github.com/vbotka/ansible-__PROJECT__/blob/__BRANCH__/templates/1.1.0-wpa_action.sh.j2>`_]
+[`templates/1.1.0-wpa_action.sh.j2 <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/1.1.0-wpa_action.sh.j2>`_]
 
 .. highlight:: jinja
     :linenothreshold: 5
@@ -60,7 +60,7 @@ Synopsis: Template wpa_cli.
 Description of the template.
 
 
-[`templates/wpa_cli.j2 <https://github.com/vbotka/ansible-__PROJECT__/blob/__BRANCH__/templates/wpa_cli.j2>`_]
+[`templates/wpa_cli.j2 <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_cli.j2>`_]
 
 .. highlight:: jinja
     :linenothreshold: 5
