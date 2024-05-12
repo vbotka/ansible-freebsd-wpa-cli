@@ -3,22 +3,22 @@
 Templates
 =========
 
-.. _as_template_1.0.0-wpa_action.sh.j2:
+.. _as_template_wpa_action-1.0.0.sh.j2:
 
-1.0.0-wpa_action.sh.j2
+wpa_action-1.0.0.sh.j2
 ----------------------
 
-Synopsis: Template 1.0.0-wpa_action.sh.
+Synopsis: Template wpa_action-1.0.0.sh.
 
 
 Description of the template.
 
 
-[`templates/1.0.0-wpa_action.sh.j2 <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/1.0.0-wpa_action.sh.j2>`_]
+[`templates/wpa_action-1.0.0.sh.j2 <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_action-1.0.0.sh.j2>`_]
 
 .. highlight:: jinja
     :linenothreshold: 5
-.. literalinclude:: ../../templates/1.0.0-wpa_action.sh.j2
+.. literalinclude:: ../../templates/wpa_action-1.0.0.sh.j2
     :language: jinja
     :emphasize-lines: 1
     :linenos:
@@ -26,22 +26,22 @@ Description of the template.
 
 
 
-.. _as_template_1.1.0-wpa_action.sh.j2:
+.. _as_template_wpa_action-1.1.0.sh.j2:
 
-1.1.0-wpa_action.sh.j2
+wpa_action-1.1.0.sh.j2
 ----------------------
 
-Synopsis: Template 1.1.0-wpa_action.sh.
+Synopsis: Template wpa_action-1.1.0.sh.
 
 
 Description of the template.
 
 
-[`templates/1.1.0-wpa_action.sh.j2 <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/1.1.0-wpa_action.sh.j2>`_]
+[`templates/wpa_action-1.1.0.sh.j2 <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_action-1.1.0.sh.j2>`_]
 
 .. highlight:: jinja
     :linenothreshold: 5
-.. literalinclude:: ../../templates/1.1.0-wpa_action.sh.j2
+.. literalinclude:: ../../templates/wpa_action-1.1.0.sh.j2
     :language: jinja
     :emphasize-lines: 1
     :linenos:

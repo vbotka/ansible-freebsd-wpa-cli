@@ -81,7 +81,7 @@ wpacli_action_script_owner: root
 wpacli_action_script_group: wheel
 wpacli_action_script_mode: "0750"
 # Action script template
-wpacli_action_script_template: 1.0.0-wpa_action.sh.j2
+wpacli_action_script_template: wpa_action-1.0.0.sh.j2
 # Paramters used in the template
 wpacli_action_script_log_to_file: false
 wpacli_action_script_logfile: /tmp/wpa_action.$ifname

@@ -1,11 +1,11 @@
 ---
 mytemplates:
 
-  - file: 1.0.0-wpa_action.sh.j2
-    link: 1.0.0-wpa_action.sh.j2
-    path: templates/1.0.0-wpa_action.sh.j2
+  - file: wpa_action-1.0.0.sh.j2
+    link: wpa_action-1.0.0.sh.j2
+    path: templates/wpa_action-1.0.0.sh.j2
     synopsis: |
-      Template 1.0.0-wpa_action.sh.
+      Template wpa_action-1.0.0.sh.
     description: |
       Description of the template.
     lines: 1
@@ -13,11 +13,11 @@ mytemplates:
     note: []
     warning: []
 
-  - file: 1.1.0-wpa_action.sh.j2
-    link: 1.1.0-wpa_action.sh.j2
-    path: templates/1.1.0-wpa_action.sh.j2
+  - file: wpa_action-1.1.0.sh.j2
+    link: wpa_action-1.1.0.sh.j2
+    path: templates/wpa_action-1.1.0.sh.j2
     synopsis: |
-      Template 1.1.0-wpa_action.sh.
+      Template wpa_action-1.1.0.sh.
     description: |
       Description of the template.
     lines: 1
