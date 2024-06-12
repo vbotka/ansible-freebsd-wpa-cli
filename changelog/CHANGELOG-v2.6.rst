@@ -10,10 +10,11 @@ vbotka.freebsd_wpa_cli 2.6 Release Notes
 
 Release Summary
 ---------------
-Maintenance update including docs update.
+Feature, bugfix and maintenance update including docs update.
 
 Major Changes
 -------------
+* Support 14.1
 
 Minor Changes
 -------------
