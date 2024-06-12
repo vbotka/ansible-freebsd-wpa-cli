@@ -31,6 +31,7 @@ wpacli_versions_tested:
   - "13.2"
   - "13.3"
   - "14.0"
+  - "14.1"
 
 # Installation method.
 # Options are "packages" for binary packages or "ports"
