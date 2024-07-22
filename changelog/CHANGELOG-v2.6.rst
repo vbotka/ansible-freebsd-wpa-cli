@@ -10,7 +10,7 @@ vbotka.freebsd_wpa_cli 2.6 Release Notes
 
 Release Summary
 ---------------
-Feature, bugfix and maintenance update including docs update.
+Ansible 2.17 maintenance update including docs update.
 
 Major Changes
 -------------
@@ -20,8 +20,11 @@ Minor Changes
 -------------
 * Bump docs version.
 * Update docs.
-* Update README
+* Update README.
 * Update default template wpacli_action_script_template
+* Update debug
+* Add var wpacli_versions_tested_rel
+* Add var wpacli_role_version
 
 Bugfixes
 --------
