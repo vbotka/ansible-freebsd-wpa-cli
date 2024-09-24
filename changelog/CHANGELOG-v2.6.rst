@@ -3,6 +3,29 @@ vbotka.freebsd_wpa_cli 2.6 Release Notes
 ========================================
 
 .. contents:: Topics
+# BEGIN Commits 2.6.1
+- Format meta/main.yml
+- Ansible 2.17 maintenance update including docs update
+- Update changelog.
+- Add 14.1 supported and tested.
+- Rename templates
+- Fix templates docs/annotation
+- Start devel 2.6.1
+# END Commits 2.6.1
+# BEGIN Release notes 2.6.1
+2.6.1
+=====
+Release Summary
+---------------
+Major Changes
+-------------
+Minor Changes
+-------------
+Bugfixes
+--------
+Breaking Changes / Porting Guide
+--------------------------------
+# END Release notes 2.6.1
 
 
 2.6.1
