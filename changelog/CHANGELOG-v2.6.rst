@@ -4,6 +4,7 @@ vbotka.freebsd_wpa_cli 2.6 Release Notes
 
 .. contents:: Topics
 # BEGIN Commits 2.6.1
+- Update python 3.11 in .travis.yml
 - Format meta/main.yml
 - Ansible 2.17 maintenance update including docs update
 - Update changelog.
@@ -21,6 +22,15 @@ Major Changes
 -------------
 Minor Changes
 -------------
+- Update python 3.11 in .travis.yml
+- Format meta/main.yml
+- Ansible 2.17 maintenance update including docs update
+- Update changelog.
+- Add 14.1 supported and tested.
+- Rename templates
+- Fix templates docs/annotation
+- Start devel 2.6.1
+
 Bugfixes
 --------
 Breaking Changes / Porting Guide
