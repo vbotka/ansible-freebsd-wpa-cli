@@ -20,7 +20,7 @@ the background, will be notified by *wpa_supplicant* when the
 interface connects or disconnects to/from the network. On such event
 *wpa_cli* executes the action file (-a action_file). See
 `templates <https://github.com/vbotka/ansible-freebsd-wpa-cli/tree/master/templates>`_
-what pre-configured scripts are available. For example, `1.1.0-wpa_action.sh <https://raw.githubusercontent.com/vbotka/ansible-freebsd-wpa-cli/master/templates/1.1.0-wpa_action.sh.j2>`_,
+what pre-configured scripts are available. For example, `wpa_action-1.1.0.sh <https://raw.githubusercontent.com/vbotka/ansible-freebsd-wpa-cli/master/templates/wpa_action-1.1.0.sh.j2>`_,
 after the connection, starts *dhclient*, restarts *routing*, and
 optionally synchronizes date and time. This solves the potential
 problem of synchronizing date and time by *settimeofday* at boot time

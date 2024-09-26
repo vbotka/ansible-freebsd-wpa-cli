@@ -1,6 +1,9 @@
 # freebsd_wpa_cli
 
-[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/freebsd_wpa_cli)[![Build Status](https://app.travis-ci.com/vbotka/ansible-freebsd-wpa-cli.svg?branch=master)](https://app.travis-ci.com/vbotka/ansible-freebsd-wpa-cli)[![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://ansible-freebsd-wpa-cli.readthedocs.io/en/latest/)[![GitHub tag](https://img.shields.io/github/v/tag/vbotka/ansible-freebsd-wpa-cli)](https://github.com/vbotka/ansible-freebsd-wpa-cli/tags)
+[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/freebsd_wpa_cli)
+[![Build Status](https://app.travis-ci.com/vbotka/ansible-freebsd-wpa-cli.svg?branch=master)](https://app.travis-ci.com/vbotka/ansible-freebsd-wpa-cli)
+[![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://ansible-freebsd-wpa-cli.readthedocs.io/en/latest/)
+[![GitHub tag](https://img.shields.io/github/v/tag/vbotka/ansible-freebsd-wpa-cli)](https://github.com/vbotka/ansible-freebsd-wpa-cli/tags)
 
 [Documentation at readthedocs.io](https://ansible-freebsd-wpa-cli.readthedocs.io)
 
@@ -29,7 +32,7 @@
 
 [Ansible role.](https://galaxy.ansible.com/vbotka/freebsd_wpa_cli/) FreeBSD. Configuration of RC system. Use wpa_cli action_file to configure wlan devices.
 
-The goal of this configuration is to start *dhclient* and other system services (e.g. *routing*, *ntpdate*, *ntpd*, ...) after the wifi interface connects to the network. The utility *wpa_cli*, running in the background, will be notified by *wpa_supplicant* when the interface connects or disconnects to/from the network. On such event *wpa_cli* executes the action file (-a action_file). See [templates](https://github.com/vbotka/ansible-freebsd-wpa-cli/tree/master/templates) what pre-configured scripts are available. For example, [1.1.0-wpa_action.sh](https://raw.githubusercontent.com/vbotka/ansible-freebsd-wpa-cli/master/templates/1.1.0-wpa_action.sh.j2), after the connection, starts *dhclient*, restarts *routing*, and optionally synchronize date and time. This solves the potential problem of synchronizing date and time by *settimeofday* at boot time of a wireless-only system. If *wpa_supplicant* doesn't manage to connect to the network by the time *ntpdate* is executed *ntpdate* will time-out. Then, in most systems, the *ntpd* service will start (see `rcorder /etc/rc.d/*`). When the hardware device has no battery and no RTC, the offset might be huge. In this case [*ntpd* will reject the offset and will terminate itself, believing something very strange must have happened](http://www.ntp.org/ntpfaq/NTP-s-algo.htm#Q-ALGO-BASIC-STEP-SLEW).
+The goal of this configuration is to start *dhclient* and other system services (e.g. *routing*, *ntpdate*, *ntpd*, ...) after the wifi interface connects to the network. The utility *wpa_cli*, running in the background, will be notified by *wpa_supplicant* when the interface connects or disconnects to/from the network. On such event *wpa_cli* executes the action file (-a action_file). See [templates](https://github.com/vbotka/ansible-freebsd-wpa-cli/tree/master/templates) what pre-configured scripts are available. For example, [wpa_action-1.1.0.sh](https://raw.githubusercontent.com/vbotka/ansible-freebsd-wpa-cli/master/templates/wpa_action-1.1.0.sh.j2), after the connection, starts *dhclient*, restarts *routing*, and optionally synchronize date and time. This solves the potential problem of synchronizing date and time by *settimeofday* at boot time of a wireless-only system. If *wpa_supplicant* doesn't manage to connect to the network by the time *ntpdate* is executed *ntpdate* will time-out. Then, in most systems, the *ntpd* service will start (see `rcorder /etc/rc.d/*`). When the hardware device has no battery and no RTC, the offset might be huge. In this case [*ntpd* will reject the offset and will terminate itself, believing something very strange must have happened](http://www.ntp.org/ntpfaq/NTP-s-algo.htm#Q-ALGO-BASIC-STEP-SLEW).
 
 Feel free to [share your feedback and report issues](https://github.com/vbotka/ansible-freebsd-wpa-cli/issues).
 
@@ -64,8 +67,8 @@ shell> cat freebsd-postinstall.yml
 - hosts: router
   roles:
     - vbotka.freebsd_postinstall
-
-
+```
+```bash
 shell> ansible-playbook freebsd-postinstall.yml -t fp_wpasupplicant
 ```
 
@@ -73,12 +76,12 @@ shell> ansible-playbook freebsd-postinstall.yml -t fp_wpasupplicant
 
 ```yaml
 shell> cat freebsd-wpacli.yml
-
 - hosts: router
   roles:
     - vbotka.freebsd_wpa_cli
     - vbotka.freebsd_network
-
+```
+```bash
 shell> ansible-playbook freebsd-wpacli.yml
 ```
 
@@ -93,7 +96,7 @@ shell> ansible-playbook freebsd-wpacli.yml
 
 ### <a name=""></a>action_file.sh
 
-```sh
+```bash
 #!/bin/sh
 ifname=$1
 cmd=$2
@@ -111,7 +114,7 @@ if [ "$cmd" = "DISCONNECTED" ]; then
 
 To control *wpa_cli* rc script */etc/rc.d/wpa_cli* is created from [template wpa_cli.j2](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_cli.j2)
 
-```sh
+```bash
 #!/bin/sh
 
 # PROVIDE: wpa_cli
@@ -147,7 +150,7 @@ run_rc_command "$1"
 
 *wpa_cli* is started and stopped from *network.subr* . See [patch](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/files/network.subr.patch)
 
-```sh
+```bash
 shell> grep -A 1 -B 3 wpa_cli /etc/network.subr
 	if wpaif $1; then
 		/etc/rc.d/wpa_supplicant start $1
@@ -167,7 +170,7 @@ shell> grep -A 1 -B 3 wpa_cli /etc/network.subr
 
 Following default variables are added to */etc/defaults* . See [patch](https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/files/rc.conf.patch)
 
-```sh
+```ini
 shell> grep -r wpa_cli /etc/defaults/
 /etc/defaults/rc.conf:wpa_cli_program="/usr/sbin/wpa_cli"
 /etc/defaults/rc.conf:wpa_cli_ctrl_interface="/var/run/wpa_supplicant"
@@ -185,14 +188,14 @@ ifconfig_wlan0="WPA"
 ```
 As a consequence, service dhclient fails:
 
-```
+```bash
 shell> /etc/rc.d/dhclient restart wlan0
 'wlan0' is not a DHCP-enabled interface
 dhclient already running?  (pid=45658).
 ```
 Instead, use wpa_cli to manually reconfigure the interface
 
-```
+```bash
 shell> wpa_cli -i wlan0 reconfigure
 OK
 ```
@@ -202,7 +205,7 @@ OK
 
 Then, the service *netif* starts/restarts and stops both wpa_supplicant and wpa_cli
 
-```sh
+```bash
 # ps ax | grep wpa
  4161  -  Ss      0:00.65 /usr/local/sbin/wpa_supplicant -s -B -i wlan0 -c /etc/wpa_supplicant.conf.wlan0 -D bsd -P /var/run/wpa_supplicant/wlan0.pid
  4171  -  Ss      0:00.44 /usr/local/sbin/wpa_cli -B -i wlan0 -P /var/run/wpa_cli/wlan0.pid -p /var/run/wpa_supplicant -a /root/bin/wpa_action.sh
@@ -226,7 +229,6 @@ shell> ansible-lint -c .ansible-lint.local
 - [Practical rc.d scripting in BSD](https://www.freebsd.org/doc/en/articles/rc-scripting/index.html)
 - [Wireless Advanced Authentication](https://docs.freebsd.org/en/books/handbook/advanced-networking/#network-advanced-wireless)
 - [Dynamic Host Configuration Protocol (DHCP)](https://docs.freebsd.org/en/books/handbook/network-servers/#network-dhcp)
-
 
 
 ## <a name="License"></a>License

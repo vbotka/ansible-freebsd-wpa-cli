@@ -14,7 +14,7 @@ Synopsis: Main task.
 Import tasks if enabled.
 
 
-[`tasks/main.yml <https://github.com/vbotka/ansible-__PROJECT__/blob/__BRANCH__/tasks/main.yml>`_]
+[`tasks/main.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/main.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
@@ -38,7 +38,7 @@ Synopsis: Configure assert.
 Description of the task.
 
 
-[`tasks/assert.yml <https://github.com/vbotka/ansible-__PROJECT__/blob/__BRANCH__/tasks/assert.yml>`_]
+[`tasks/assert.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/assert.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
@@ -62,7 +62,7 @@ Synopsis: Configure debug.
 Description of the task.
 
 
-[`tasks/debug.yml <https://github.com/vbotka/ansible-__PROJECT__/blob/__BRANCH__/tasks/debug.yml>`_]
+[`tasks/debug.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/debug.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
@@ -86,7 +86,7 @@ Synopsis: Configure packages.
 Description of the task.
 
 
-[`tasks/packages.yml <https://github.com/vbotka/ansible-__PROJECT__/blob/__BRANCH__/tasks/packages.yml>`_]
+[`tasks/packages.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/packages.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
@@ -110,7 +110,7 @@ Synopsis: Configure rcconf.
 Description of the task.
 
 
-[`tasks/rcconf.yml <https://github.com/vbotka/ansible-__PROJECT__/blob/__BRANCH__/tasks/rcconf.yml>`_]
+[`tasks/rcconf.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/rcconf.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
@@ -134,7 +134,7 @@ Synopsis: Configure rc.
 Description of the task.
 
 
-[`tasks/rc.yml <https://github.com/vbotka/ansible-__PROJECT__/blob/__BRANCH__/tasks/rc.yml>`_]
+[`tasks/rc.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/rc.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
@@ -158,7 +158,7 @@ Synopsis: Configure wpa-cli.
 Description of the task.
 
 
-[`tasks/wpa-cli.yml <https://github.com/vbotka/ansible-__PROJECT__/blob/__BRANCH__/tasks/wpa-cli.yml>`_]
+[`tasks/wpa-cli.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/wpa-cli.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5

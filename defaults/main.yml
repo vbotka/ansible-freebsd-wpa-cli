@@ -1,5 +1,6 @@
 ---
 # defaults for vbotka.freebsd_wpa_cli
+wpacli_role_version: 2.6.1
 
 # Install wpacli_packages
 wpacli_install: true
@@ -19,18 +20,12 @@ wpacli_debug: false
 wpacli_backup_conf: false
 
 # List of supported OS versions
-wpacli_versions_tested:
-  - "11.3"
-  - "11.4"
-  - "12.1"
-  - "12.2"
-  - "12.3"
-  - "12.4"
-  - "13.0"
-  - "13.1"
-  - "13.2"
-  - "13.3"
-  - "14.0"
+wpacli_versions_tested: "{{ wpacli_versions_tested_rel | flatten }}"
+wpacli_versions_tested_rel:
+  - ["11.3", "11.4"]
+  - ["12.1", "12.2", "12.3", "12.4"]
+  - ["13.0", "13.1", "13.2", "13.3"]
+  - ["14.0", "14.1"]
 
 # Installation method.
 # Options are "packages" for binary packages or "ports"
@@ -81,7 +76,7 @@ wpacli_action_script_owner: root
 wpacli_action_script_group: wheel
 wpacli_action_script_mode: "0750"
 # Action script template
-wpacli_action_script_template: 1.0.0-wpa_action.sh.j2
+wpacli_action_script_template: wpa_action-1.0.0.sh.j2
 # Paramters used in the template
 wpacli_action_script_log_to_file: false
 wpacli_action_script_logfile: /tmp/wpa_action.$ifname

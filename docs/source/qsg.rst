@@ -43,7 +43,7 @@ an example of how to configure ``wpa_cli``.
    shell> cat host_vars/srv.example.com/wpa-cli.yml
    wpacli_install: false
    wpacli_action_script: true
-   wpacli_action_script_template: "1.1.0-wpa_action.sh.j2"
+   wpacli_action_script_template: "wpa_action-1.1.0.sh.j2"
    wpacli_action_script_log_to_file: true
    wpacli_action_script_ntp_set: true
 
