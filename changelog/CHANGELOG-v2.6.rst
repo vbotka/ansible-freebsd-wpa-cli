@@ -5,6 +5,21 @@ vbotka.freebsd_wpa_cli 2.6 Release Notes
 .. contents:: Topics
 
 
+2.6.2
+=====
+
+Release Summary
+---------------
+Update doc.
+
+Major Changes
+-------------
+
+Minor Changes
+-------------
+- Update docs.
+
+
 2.6.1
 =====
 
