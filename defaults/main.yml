@@ -1,6 +1,6 @@
 ---
 # defaults for vbotka.freebsd_wpa_cli
-wpacli_role_version: 2.6.2
+wpacli_role_version: 2.6.3
 
 # Install wpacli_packages
 wpacli_install: true
