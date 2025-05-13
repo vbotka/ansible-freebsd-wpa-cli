@@ -8,13 +8,13 @@ Templates
 wpa_action-1.0.0.sh.j2
 ----------------------
 
-Synopsis: Template wpa_action-1.0.0.sh.
+Synopsis: Configure wpa_action-1.0.0.sh
 
 
-Description of the template.
+Description of the task.
 
 
-[`templates/wpa_action-1.0.0.sh.j2 <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_action-1.0.0.sh.j2>`_]
+[`templates/wpa_action-1.0.0.sh.j2 <https://github.com/__GITHUB_USERNAME__/__PROJECT__/blob/__BRANCH__/templates/wpa_action-1.0.0.sh.j2>`_]
 
 .. highlight:: jinja
     :linenothreshold: 5
@@ -26,18 +26,19 @@ Description of the template.
 
 
 
+
 .. _as_template_wpa_action-1.1.0.sh.j2:
 
 wpa_action-1.1.0.sh.j2
 ----------------------
 
-Synopsis: Template wpa_action-1.1.0.sh.
+Synopsis: Configure wpa_action-1.1.0.sh
 
 
-Description of the template.
+Description of the task.
 
 
-[`templates/wpa_action-1.1.0.sh.j2 <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_action-1.1.0.sh.j2>`_]
+[`templates/wpa_action-1.1.0.sh.j2 <https://github.com/__GITHUB_USERNAME__/__PROJECT__/blob/__BRANCH__/templates/wpa_action-1.1.0.sh.j2>`_]
 
 .. highlight:: jinja
     :linenothreshold: 5
@@ -49,18 +50,19 @@ Description of the template.
 
 
 
+
 .. _as_template_wpa_cli.j2:
 
 wpa_cli.j2
 ----------
 
-Synopsis: Template wpa_cli.
+Synopsis: Configure wpa_cli
 
 
-Description of the template.
+Description of the task.
 
 
-[`templates/wpa_cli.j2 <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/templates/wpa_cli.j2>`_]
+[`templates/wpa_cli.j2 <https://github.com/__GITHUB_USERNAME__/__PROJECT__/blob/__BRANCH__/templates/wpa_cli.j2>`_]
 
 .. highlight:: jinja
     :linenothreshold: 5
@@ -68,6 +70,7 @@ Description of the template.
     :language: jinja
     :emphasize-lines: 1
     :linenos:
+
 
 
 

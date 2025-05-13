@@ -5,36 +5,63 @@ mytemplates:
     link: wpa_action-1.0.0.sh.j2
     path: templates/wpa_action-1.0.0.sh.j2
     synopsis: |
-      Template wpa_action-1.0.0.sh.
+      Configure wpa_action-1.0.0.sh
     description: |
-      Description of the template.
+      Description of the task.
     lines: 1
-    seealso: []
-    note: []
-    warning: []
+    seealso:
+      {}
+
+    notes:
+      []
+
+    hints:
+      []
+
+    warnings:
+      []
+
 
   - file: wpa_action-1.1.0.sh.j2
     link: wpa_action-1.1.0.sh.j2
     path: templates/wpa_action-1.1.0.sh.j2
     synopsis: |
-      Template wpa_action-1.1.0.sh.
+      Configure wpa_action-1.1.0.sh
     description: |
-      Description of the template.
+      Description of the task.
     lines: 1
-    seealso: []
-    note: []
-    warning: []
+    seealso:
+      {}
+
+    notes:
+      []
+
+    hints:
+      []
+
+    warnings:
+      []
+
 
   - file: wpa_cli.j2
     link: wpa_cli.j2
     path: templates/wpa_cli.j2
     synopsis: |
-      Template wpa_cli.
+      Configure wpa_cli
     description: |
-      Description of the template.
+      Description of the task.
     lines: 1
-    seealso: []
-    note: []
-    warning: []
+    seealso:
+      {}
+
+    notes:
+      []
+
+    hints:
+      []
+
+    warnings:
+      []
+
 
 ...

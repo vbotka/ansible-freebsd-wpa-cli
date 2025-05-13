@@ -14,12 +14,12 @@ Synopsis: Main task.
 Import tasks if enabled.
 
 
-[`tasks/main.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/main.yml>`_]
+[`tasks/main.yml <https://github.com/__GITHUB_USERNAME__/__PROJECT__/blob/__BRANCH__/tasks/main.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/main.yml
-    :language: Yaml
+    :language: yaml
     :emphasize-lines: 1,2
     :linenos:
 
@@ -32,19 +32,19 @@ Import tasks if enabled.
 assert.yml
 ----------
 
-Synopsis: Configure assert.
+Synopsis: Configure assert
 
 
 Description of the task.
 
 
-[`tasks/assert.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/assert.yml>`_]
+[`tasks/assert.yml <https://github.com/__GITHUB_USERNAME__/__PROJECT__/blob/__BRANCH__/tasks/assert.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/assert.yml
-    :language: Yaml
-    :emphasize-lines: 1,2
+    :language: yaml
+    :emphasize-lines: 1
     :linenos:
 
 
@@ -56,19 +56,19 @@ Description of the task.
 debug.yml
 ---------
 
-Synopsis: Configure debug.
+Synopsis: Configure debug
 
 
 Description of the task.
 
 
-[`tasks/debug.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/debug.yml>`_]
+[`tasks/debug.yml <https://github.com/__GITHUB_USERNAME__/__PROJECT__/blob/__BRANCH__/tasks/debug.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/debug.yml
-    :language: Yaml
-    :emphasize-lines: 1,2
+    :language: yaml
+    :emphasize-lines: 1
     :linenos:
 
 
@@ -80,19 +80,19 @@ Description of the task.
 packages.yml
 ------------
 
-Synopsis: Configure packages.
+Synopsis: Configure packages
 
 
 Description of the task.
 
 
-[`tasks/packages.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/packages.yml>`_]
+[`tasks/packages.yml <https://github.com/__GITHUB_USERNAME__/__PROJECT__/blob/__BRANCH__/tasks/packages.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/packages.yml
-    :language: Yaml
-    :emphasize-lines: 1,2
+    :language: yaml
+    :emphasize-lines: 1
     :linenos:
 
 
@@ -104,19 +104,19 @@ Description of the task.
 rcconf.yml
 ----------
 
-Synopsis: Configure rcconf.
+Synopsis: Configure rcconf
 
 
 Description of the task.
 
 
-[`tasks/rcconf.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/rcconf.yml>`_]
+[`tasks/rcconf.yml <https://github.com/__GITHUB_USERNAME__/__PROJECT__/blob/__BRANCH__/tasks/rcconf.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/rcconf.yml
-    :language: Yaml
-    :emphasize-lines: 1,2
+    :language: yaml
+    :emphasize-lines: 1
     :linenos:
 
 
@@ -128,19 +128,19 @@ Description of the task.
 rc.yml
 ------
 
-Synopsis: Configure rc.
+Synopsis: Configure rc
 
 
 Description of the task.
 
 
-[`tasks/rc.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/rc.yml>`_]
+[`tasks/rc.yml <https://github.com/__GITHUB_USERNAME__/__PROJECT__/blob/__BRANCH__/tasks/rc.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/rc.yml
-    :language: Yaml
-    :emphasize-lines: 1,2
+    :language: yaml
+    :emphasize-lines: 1
     :linenos:
 
 
@@ -152,19 +152,19 @@ Description of the task.
 wpa-cli.yml
 -----------
 
-Synopsis: Configure wpa-cli.
+Synopsis: Configure wpa-cli
 
 
 Description of the task.
 
 
-[`tasks/wpa-cli.yml <https://github.com/vbotka/ansible-freebsd-wpa-cli/blob/master/tasks/wpa-cli.yml>`_]
+[`tasks/wpa-cli.yml <https://github.com/__GITHUB_USERNAME__/__PROJECT__/blob/__BRANCH__/tasks/wpa-cli.yml>`_]
 
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/wpa-cli.yml
-    :language: Yaml
-    :emphasize-lines: 1,2
+    :language: yaml
+    :emphasize-lines: 1
     :linenos:
 
 
