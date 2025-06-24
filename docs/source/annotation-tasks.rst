@@ -19,7 +19,7 @@ Import tasks if enabled.
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/main.yml
-    :language: Yaml
+    :language: yaml
     :emphasize-lines: 1,2
     :linenos:
 
@@ -32,7 +32,7 @@ Import tasks if enabled.
 assert.yml
 ----------
 
-Synopsis: Configure assert.
+Synopsis: Configure assert
 
 
 Description of the task.
@@ -43,8 +43,8 @@ Description of the task.
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/assert.yml
-    :language: Yaml
-    :emphasize-lines: 1,2
+    :language: yaml
+    :emphasize-lines: 1
     :linenos:
 
 
@@ -56,7 +56,7 @@ Description of the task.
 debug.yml
 ---------
 
-Synopsis: Configure debug.
+Synopsis: Configure debug
 
 
 Description of the task.
@@ -67,8 +67,8 @@ Description of the task.
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/debug.yml
-    :language: Yaml
-    :emphasize-lines: 1,2
+    :language: yaml
+    :emphasize-lines: 1
     :linenos:
 
 
@@ -80,7 +80,7 @@ Description of the task.
 packages.yml
 ------------
 
-Synopsis: Configure packages.
+Synopsis: Configure packages
 
 
 Description of the task.
@@ -91,8 +91,8 @@ Description of the task.
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/packages.yml
-    :language: Yaml
-    :emphasize-lines: 1,2
+    :language: yaml
+    :emphasize-lines: 1
     :linenos:
 
 
@@ -104,7 +104,7 @@ Description of the task.
 rcconf.yml
 ----------
 
-Synopsis: Configure rcconf.
+Synopsis: Configure rcconf
 
 
 Description of the task.
@@ -115,8 +115,8 @@ Description of the task.
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/rcconf.yml
-    :language: Yaml
-    :emphasize-lines: 1,2
+    :language: yaml
+    :emphasize-lines: 1
     :linenos:
 
 
@@ -128,7 +128,7 @@ Description of the task.
 rc.yml
 ------
 
-Synopsis: Configure rc.
+Synopsis: Configure rc
 
 
 Description of the task.
@@ -139,8 +139,8 @@ Description of the task.
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/rc.yml
-    :language: Yaml
-    :emphasize-lines: 1,2
+    :language: yaml
+    :emphasize-lines: 1
     :linenos:
 
 
@@ -152,7 +152,7 @@ Description of the task.
 wpa-cli.yml
 -----------
 
-Synopsis: Configure wpa-cli.
+Synopsis: Configure wpa-cli
 
 
 Description of the task.
@@ -163,8 +163,8 @@ Description of the task.
 .. highlight:: yaml
     :linenothreshold: 5
 .. literalinclude:: ../../tasks/wpa-cli.yml
-    :language: Yaml
-    :emphasize-lines: 1,2
+    :language: yaml
+    :emphasize-lines: 1
     :linenos:
 
 
