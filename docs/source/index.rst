@@ -3,7 +3,7 @@ Ansible role FreeBSD wpa_cli
 
 `vbotka.freebsd_wpa_cli`_
 
-Role version 2.7.0
+version |release|
 
 | This `role`_ and the documentation is work in progess.
 | Feel free to `share your feedback and report issues`_.

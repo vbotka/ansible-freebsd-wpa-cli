@@ -10,11 +10,11 @@ vbotka.freebsd_wpa_cli 2.7 Release Notes
 
 Release Summary
 ---------------
-Ansible 2.18 update. Update docs.
+Ansible 2.18 update.
 
 Major Changes
 -------------
-* Supported FreeBSD 13.4, 13.5. and 14.2
+* Supported FreeBSD 13.4, 13.5, 14.2, and 14.3
 
 Minor Changes
 -------------
