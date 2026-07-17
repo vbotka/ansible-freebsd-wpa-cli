@@ -1,6 +1,6 @@
 ---
 # defaults for vbotka.freebsd_wpa_cli
-wpacli_role_version: 2.7.0
+wpacli_role_version: 2.9.0
 
 # Install wpacli_packages
 wpacli_install: true
@@ -25,7 +25,8 @@ wpacli_versions_tested_rel:
   - ["11.3", "11.4"]
   - ["12.1", "12.2", "12.3", "12.4"]
   - ["13.0", "13.1", "13.2", "13.3", "13.4", "13.5"]
-  - ["14.0", "14.1", "14.2", "14.3"]
+  - ["14.0", "14.1", "14.2", "14.3", "14.4"]
+  - ["15.0", "15.1"]
 
 # Installation method.
 # Options are "packages" for binary packages or "ports"
